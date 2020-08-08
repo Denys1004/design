@@ -1,0 +1,48 @@
+{%extends "layout.html"%}
+{%block content%}
+
+<div class="home-container">
+    <div class="home-content">
+        <h1>Welcome</h1>
+        <div class="intro">
+            <p id="intro">to my <a id="portfolio-link" href="{{ url_for('portfolio') }}">portfolio</a> website</p>
+        </div>
+        <div class="button-container">
+            <a href="../static/images/Resume_Denys_Krychevskyi.pdf" target="_blank"><div class="clickme">Resume</div></a>
+            <div class="separator"></div>
+            <a href="../static/images/Cover_letter_Denys_Krychevskyi.pdf" target="_blank"><div class="clickme">Cover Letter</div></a>
+        </div>
+
+        <div class="home-contact">
+            <div class="home-phone">
+                <img src="../static/images/phone.svg" alt="phone">
+                <p>+1 206 799 0080</p>
+            </div>
+            <div class="home-email">
+                <img src="../static/images/envelope.svg" alt="envelope">
+                <p>krychevskyidenys@gmail.com</p>
+            </div>
+        </div>
+
+
+
+         <!-- *************************************** -->
+         <!-- **********  ANIMATION LINK  *********** -->
+         <!-- *************************************** -->
+         <div class="line-animation-box">
+             <a class="line-animation-link" href="{{ url_for('contacts') }}">Contact Me</a>
+         </div>
+         <!-- *************************************** -->
+         <!-- ***************  END  ***************** -->
+         <!-- *************************************** -->
+
+
+    </div>
+    <div class="icons-container">
+        <a href="https://www.facebook.com/denys.krychevskyi?ref=bookmarks" target="_blank"><img class="icons" src="../static/images/facebook.svg" alt="facebook"></a>
+        <a href="https://www.linkedin.com/in/denys-krychevskyi-b00a6a166/" target="_blank"><img class="icons" src="../static/images/linkedin.svg" alt="linkedin"></a>
+        <a href="https://vk.com/id155850793" target="_blank"><img class="icons" src="../static/images/vk.svg" alt="vk"></a>
+    </div>
+</div>
+
+{%endblock%}

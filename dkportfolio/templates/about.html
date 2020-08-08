@@ -1,0 +1,59 @@
+{%extends "layout.html"%}
+{%block content%}
+
+<div class="page-container">
+
+    <div class="page">
+        <p class="following-page"><a href="{{ url_for('home') }}">Home</a> > About</p>
+    </div>
+    <div class="separator"></div>
+
+
+        <div class="about-photo_description">
+            <div class="about-description">
+                <div class="letter-box">
+                    <p>Hey,</p>
+                    <p>I'm Denys.</p>
+                    <p>Born in Ukraine, happily live and work in Seattle now.</p>
+                    <p>Three years ago, I won a <span class="bold">Green Card</span> and came to the US. </p>
+                    <p>I’m Graphic Designer with experience in <span class="bold">Print</span>, <span class="bold">Packaging</span> and <span class="bold">Marketing & Advertising Design</span>.
+                        I also have more than <span class="bold">10 years of customer service experience</span> and more than <span class="bold">4 years of management experience</span>,
+                        which helps me to understand customer needs and apply it into my work. Proficient in Adobe Creative Suite,
+                        familiar with HTML5, CSS. Fluent in Python, Flask, Heroku cloud, JavaScript and jQuery.
+                        Studying Python and Django Full Stack Development.</p>
+                </div>
+            </div>
+            <div class="about_photo"><img src="../static/images/myphoto.png" alt=""></div>
+        </div>
+
+
+
+    <div class="separator"></div>
+
+    <div class="more-about">
+        <div class="separator"></div>
+        <h2>More About Me</h2>
+        <div class="border"></div>
+        <div class="more-about-icons-container">
+            <div class="more-about-icons experience">
+                <img src="../static/images/work.svg" alt="Experience">
+                <p>Over 10 years' experience</p>
+            </div>
+            <div class="more-about-icons creativity">
+                <img src="../static/images/lamp.svg" alt="creativity">
+                <p>Creative thinking</p>
+            </div>
+            <div class="more-about-icons time">
+                <img src="../static/images/zzz.svg" alt="Time management">
+                <p>Time management</p>
+            </div>
+            <div class="more-about-icons bonus">
+                <img src="../static/images/man.svg" alt="Experience">
+                <p>Customer Service</p>
+            </div>
+            <div class="separator"></div>
+        </div>
+        <div class="separator"></div>
+    </div>
+</div>
+{%endblock%}

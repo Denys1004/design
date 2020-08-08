@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Jura&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+
+
+    <!-- scroll up script and icon here-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+     <!--  portfolio gallery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"/>
+
+    <link rel="icon" type="image/png" href="../static/images/favicon.png">
+
+    <title>Denys Krychevskyi Portfolio</title>
+</head>
+<body>
+    <div class="content">
+        <div class="nav-container">
+            <nav>
+                <div class="header">
+                    <div class="burger">
+                        <div class="line1"></div>
+                        <div class="line2"></div>
+                        <div class="line3"></div>
+                    </div>
+                    <div class="logo-container">
+                        <div class="logo"><a href="{{ url_for('home') }}">DenK</a></div>
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="{{ url_for('home') }}">Home</a></li>
+                        <li><a href="{{ url_for('portfolio') }}">Portfolio</a></li>
+                        <li><a href="{{ url_for('about') }}">About</a></li>
+                        <li><a href="{{ url_for('contacts') }}">Contact Me</a></li>
+                    </ul>
+                    <div class="contact-container">
+                        <div class="phone">
+                            <img src="../static/images/phone.svg" alt="phone">
+                            <p>+1 206 799 0080</p>
+                        </div>
+                        <div class="email">
+                            <img src="../static/images/envelope.svg" alt="envelope">
+                            <p>krychevskyidenys@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class=“container”>
+        {%block content%}
+		{%endblock%}
+        </div>
+    </div>
+
+    <button id="btnScrollToTop">
+        <!--<i class="material-icons">expand_less</i> -->
+        <img id="scroll-arrow" src="../static/images/up-arrow.svg" alt="arrow-up">
+    </button>
+    <script src="{{ url_for('static', filename='js/main.js')}}"></script>
+</body>
+</html>

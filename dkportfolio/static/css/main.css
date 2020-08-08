@@ -1,0 +1,789 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Jura', sans-serif;
+    -moz-box-sizing: border-box;
+}
+
+.content{
+    background: url(../images/bg4_new.jpg) no-repeat center center/cover;
+    height: 100vh;
+}
+.header{
+    display: flex;
+    padding: 0 20px;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 8vh;
+    margin: auto;
+}
+.contact-container{
+    flex:2;
+    color: white;
+    text-align: right;
+}
+.phone{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 3px 0;
+}
+.email{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 3px 0;
+}
+.contact-container p{
+    font-size: 14px;
+}
+.contact-container img{
+    width: 13px;
+    height: 13px;
+    margin: 2px 10px 0;
+}
+
+.logo-container{
+    font-size: 26px;
+    display: flex;
+    min-width: 76px;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* here we removing letter-spacing from the last letter */
+/************************************************************/
+.logo {
+  letter-spacing:0.1em;
+  margin-right:-0.1em;
+}
+
+.logo-container .logo a{
+    font-family: 'Black Ops One', cursive;
+    color: rgb(255, 255, 255);
+}
+
+
+/* link animation */
+/************************************************************/
+.nav-links a{
+	padding: 1rem 0;
+	position: relative;
+}
+.nav-links a::before,
+.nav-links a::after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	background-color: #CA1414;
+	left: 0;
+	transform: scaleX(0);
+	transition: all .5s;
+}
+.nav-links a::before{
+	top: 0;
+	transform-origin: left;
+}
+.nav-links a::after{
+	bottom: 0;
+	transform-origin: right;
+}
+.nav-links a:hover::before,
+.nav-links a:hover::after{
+	transform: scaleX(1);
+}
+
+
+/* right now it is possible to scroll right, and we don't want that, so we need to write body { overflow: hidden;},
+see code below about transform: translateX(100%); */
+/************************************************************/
+body{
+    overflow-x: hidden;
+}
+/* here we making navlinks under navbar */
+/************************************************************/
+.nav-links{
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 200px;
+    position: fixed;
+    left: 200px;
+    padding-top: 60px;
+    top: 0px;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    /* to move navbar from the screen to the right, so its not visible, write: */
+    transform: translateX(-200%);
+    /* right now it is possible to scroll right, and we don't want that, so we need to write body { overflow: hidden;}, see it here, bur above */
+
+    /* also we need a transition because we want it to be smooth: */
+    transition: transform 2s ease;
+}
+
+/* original state of the navlinks text is hidden, and we want to say opacity 0 and when we click on the burger it is going to fade in nicely */
+/************************************************************/
+.nav-links li{
+    opacity: 0;
+    margin: 5px 0 0 52px;
+    padding: 25px 0px;
+}
+.nav-links li a{
+    color: #C1C6C8;
+    letter-spacing: 2px;
+    margin-top: 20px;
+}
+.nav-links li a:hover{
+    color: white;
+}
+
+/* burger lines */
+/************************************************************/
+.burger{
+    cursor: pointer;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 1;
+}
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: #CA1414;
+    margin: 3px 0px;
+    border-radius: 3px;
+    transition: all 0.4s ease;
+    align-items: right;
+}
+
+.burger div:hover{
+    background-color: white;
+}
+
+
+/* when you click on burger, we want navbar to be visible and we need to move it back, because now its hidden x 100%  */
+/************************************************************/
+.nav-active{
+    transform: translateX(-100%);
+    display: flex;
+}
+
+
+/* how we going to make menu apear one by one? lets build animattion! */
+/************************************************************/
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        /* and we want to add a little movements: */
+        transform: translateX(-50px);
+    }
+    to{
+        opacity: 1;
+        /* and movements go from 50px to 0px: */
+        transform: translateX(0px);
+    }
+}
+/* we  build animation and now we need to ADD it. we go to script to get our navlinks */
+
+
+/* to change burger to cross we need to ADD toggle class: */
+/************************************************************/
+.toggle .line1{
+    transform: rotate(45deg) translate(5px, 7px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(-45deg) translate(5px, -8px);
+}
+/* now we need to add transition to .burger div*/
+
+
+
+
+
+
+
+
+                                                       /* HOME */
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+.home-container{
+    padding: 0 20px;
+}
+.home-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 85vh;
+    color: white;
+    letter-spacing: .05rem;
+}
+.home-content #portfolio-link{
+    color: #CA1414;
+    font-weight: bold;
+    transition: .6s;
+}
+.home-content #portfolio-link:hover{
+    color: white;
+}
+
+
+.home-content h1{
+    font-size: 4rem;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: .25rem;
+}
+.intro{
+    font-size: 1.6rem;
+}
+.home-container img{
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+}
+.home-contact{
+    display: none;
+}
+.icons-container{
+    height: 7vh;
+    text-align: center;
+    opacity: 0.9;
+}
+.icons img{
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    fill: white;
+}
+
+
+
+
+
+
+.home-contactme-link{
+
+}
+.home-contactme-link a{
+
+}
+.home-contactme-link a:hover{
+    color: #CA1414;
+}
+/*********************************************/
+/*********** LINE ANIMATION LINK *************/
+/*********************************************/
+.line-animation-box{
+    margin-top: 40px;
+}
+
+.line-animation-box .line-animation-link{
+	text-decoration: none;
+	color: white;
+    transform: 0.6s;
+}
+
+.line-animation-link{
+	padding: 1rem 0;
+	margin: 0 3rem;
+	position: relative;
+}
+.line-animation-link::before,
+.line-animation-link::after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	background-color: #CA1414;
+	left: 0;
+	transform: scaleX(0);
+	transition: all .5s;
+}
+.line-animation-link::before{
+	top: 0;
+	transform-origin: left;
+}
+.line-animation-link::after{
+	bottom: 0;
+	transform-origin: right;
+}
+.line-animation-link:hover::before,
+.line-animation-link:hover::after{
+	transform: scaleX(1);
+}
+/*********************************************/
+/******************** END ********************/
+/*********************************************/
+
+
+
+
+
+
+/*CV BUTTONS*/
+/***********************************************************/
+.button-container{
+    display: flex;
+    align-items: center;
+    margin: 20px auto;
+    min-width: 200px;
+    min-height: 8vh;
+}
+.separator{
+    width: 20px;
+    height: 20px;
+}
+.clickme{
+    background: white;
+    border: none;
+    width: 132px;
+    margin: auto;
+    padding:10px;
+    transition: .6s;
+    font-size: 16px;
+    border-radius: 5px;
+    text-align: center;
+    color:#CA1414;
+}
+.clickme:hover{
+    background: #CA1414;
+    color: white;
+}
+@media screen and (max-width:768px){
+    .button-container{
+        display: block;
+        text-align: center;
+    }
+    .btn{
+        margin: 15px 10px;
+    }
+    .home-content h1{
+        font-size: 3rem;
+    }
+    .intro{
+        font-size: 1rem;
+    }
+}
+
+
+                                               /* PORTFOLIO */
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+.page-container{
+    background-color: rgba(255, 255, 255, 1);
+    padding: 0 20px;
+}
+.following-page{
+    font-size: 12px;
+    color: gray;
+}
+.following-page a{
+    color: gray;
+    transition: .6s;
+}
+.following-page a:hover{
+    color: #CA1414;
+}
+
+
+/*PORTFOLIO GALLERY*/
+/***********************************************************/
+.gallery-container{
+    width: 100%;
+}
+.inner-width{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+.portfolio-container h1{
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    margin: 20px 0 0 0;
+}
+.border{
+    width: 50%;
+    height: 2px;
+    background-color: #CA1414;
+    margin: 10px auto 20px auto;
+}
+.border2{
+    width: 50%;
+    height: 40px;
+    margin: 10px auto 20px auto;
+}
+.portfolio-container .gallery{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+}
+.portfolio-container .image{
+    flex: 25%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.portfolio-container .image img{
+    width: 100%;
+    height: 100%;
+    transition: 0.4s;
+}
+.portfolio-container .image:hover img{
+    transform: scale(1.4)
+}
+
+@media screen and (max-width:960px){
+    .portfolio-container .image{
+        flex: 33.33%;
+    }
+}
+@media screen and (max-width:768px){
+    .portfolio-container .image{
+        flex: 90%;
+    }
+
+    .portfolio-container h1{
+      font-size: 24px;
+    }
+}
+@media screen and (max-width:480px){
+    .portfolio-container .image{
+        flex: 100%;
+    }
+    .portfolio-container h1{
+      font-size: 20px;
+    }
+}
+
+                                               /* ABOUT */
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+.about-photo_description{
+    display: flex;
+    align-items: center;
+}
+.about_photo{
+    background: black;
+    border-radius: 50% 50% 50% 50%;
+}
+.about_photo img{
+    width: 350px;
+    border-radius: 50%;
+}
+.letter-box{
+    padding: 10px 20px 10px 10px;
+}
+.letter-box p{
+    margin: 7px;
+    font-size: 18px;
+    text-align: justify;
+}
+
+/********    DIV more about     ********/
+/***********************************************************/
+.more-about{
+    text-align: center;
+}
+.more-about-icons-container{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    padding: 20px 0;
+    justify-content: space-between;
+}
+.more-about-icons{
+    width: 250px;
+    margin: 0 20px;
+}
+.more-about-icons-container .more-about-icons img{
+    max-width: 40px;
+    height: auto;
+}
+
+
+
+
+
+
+
+
+
+                                               /* CONTACT ME */
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+.inner-width h1{
+    text-align: center;
+    margin: 20px;
+    text-transform: uppercase;
+}
+.email-container{
+    max-width: 350px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: auto;
+    padding: 10px;
+}
+.email-container img{
+    flex: 1;
+    width: 50px;
+    margin: auto;
+}
+.email-container p{
+    flex: 1;
+    font-size: 20px;
+    margin: auto;
+}
+.phone-container{
+    max-width: 350px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: auto;
+    padding: 10px;
+}
+.phone-icon-container{
+    display: flex;
+    margin: auto;
+    align-items: flex-start; /*added*/
+}
+.phone-icon-container img{
+    margin: 10px;
+    width: 50px;
+    flex: 1;
+}
+.phone-container p{
+    flex: 1;
+    font-size: 20px;
+    margin: auto;
+}
+.social-container{
+    max-width: 350px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: auto;
+    padding: 10px;
+}
+.social-container img{
+    flex: 1;
+    width: 50px;
+    margin: auto;
+}
+.social-container a{
+    flex: 1;
+    font-size: 20px;
+    margin: auto;
+    text-decoration: none;
+    color: white;
+}
+.social-container a.facebook_text:hover{
+    text-decoration: underline;
+}
+.contactme{
+    margin-top: 20px;
+    display: none;
+}
+.contactme p{
+    color: white;
+    text-align: center;
+    margin: 10px;
+}
+.contact-page-container{
+    padding: 0 20px;
+}
+/* Send Message Form */
+/***********************************************************/
+.contact-form-title{
+    text-align: center;
+}
+.contact-form-title h1{
+    color: #CA1414;
+    margin-top: 20px;
+}
+.form-box{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.form-elements{
+    display: flex;
+    flex-direction: column;
+}
+.pure-group{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-item: center;
+    margin: 10px auto;
+    border: none;
+}
+.pure-group label{
+    color: #CA1414;
+    margin: 10px;
+font-size: 20px;
+}
+
+.pure-group input{
+    width: 200px;
+    height: 20px;
+    justify-content: center;
+    text-align: left;
+    margin: 5px auto;
+}
+.pure-group textarea{
+    width: 200px;
+    height: 120px;
+}
+.title-border{
+    width: 50%;
+    max-width: 200px;
+    height: 2px;
+    background-color: white;
+    margin: 10px auto 20px auto;
+}
+.form-elements button{
+    background: #CA1414;
+    border: none;
+    width: 132px;
+    margin: 10px auto;
+    padding:10px;
+    transition: .6s;
+    font-size: 16px;
+    border-radius: 5px;
+    text-align: center;
+    color:white;
+    cursor: pointer;
+}
+.form-elements button:hover{
+    background: white;
+    color: #CA1414;
+}
+/*Thank you message*/
+/***********************************************************/
+.thankyou_message{
+    padding: 20px;
+    font-family: 'Jura', sans-serif;
+    font-size: 22px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.thankyou_message p{
+    margin: 0 0 10px;
+}
+.thankyou_message a{
+    margin-top: 20px;
+}
+
+
+
+
+
+
+                                          /* Media query*/
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+@media screen and (max-width:910px){
+    .letter-box p{
+        font-size: 17px;
+    }
+}
+@media screen and (max-width:830px){
+    .letter-box p{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width:780px){
+    .about-photo_description{
+        flex-direction: column;
+        text-align: center;
+    }
+     .about_photo{
+        border-radius: 50%;
+    }
+    .about_photo img{
+        width: 320px;
+    }
+    .letter-box{
+        padding: 20px;
+    }
+}
+@media screen and (max-width:670px){
+	.contact-container{
+		display: none;
+	}
+	.logo{
+        text-align: right;
+        justify-content: right;
+        align-items: right;
+    }
+	.main-container .contact{
+		display: block;
+	}
+	.home-contact{
+        display: block;
+    }
+    .about-container{
+        flex-direction: column;
+        text-align: center;
+        padding: 20px; 30px;
+    }
+    .text-container{
+        width: 80%;
+    }
+    .photo-container img{
+        margin: 20px 0 0;
+    }
+    .letter-box p{
+        font-size: 15px;
+    }
+    .contactme{
+    display: block;
+    }
+    .more-about-icons-container{
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+    .more-about-icons-container img{
+        margin: 20px 0 5px;
+    }
+}
+
+
+                                        /*Scroll to Top BUTTON*/
+/**********************************************************************************************************************/
+/**********************************************************************************************************************/
+#btnScrollToTop{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: Transparent;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: .6s;
+}
+#scroll-arrow{
+    width: 30px;
+    height: 30px;
+    display: none;
+}
+#btnScrollToTop:hover{
+    background: rgb(212, 212, 212);
+}

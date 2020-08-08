@@ -1,0 +1,64 @@
+{%extends "layout.html"%}
+{%block content%}
+
+<div class="contact-page-container">
+    <div class="page">
+        <p class="following-page"><a href="{{ url_for('home') }}">Home</a> > Contact Me</p>
+    </div>
+    <div class="separator"></div>
+    <div class="page-wrap">
+
+        <div class="contact-form-title">
+            <h1 class="">Contact me</h1>
+            <div class="title-border"></div>
+        </div>
+
+        <div class="form-box">
+            <form class="gform pure-form pure-form-stacked" method="POST" data-email="example@email.net" action="https://script.google.com/macros/s/AKfycbyxPQAJjDmp8rjZdJAO3p5vtcvK_t9Pz-ymdOcZZg/exec">
+            <!-- change the form action to your script url -->
+
+                <div class="form-elements">
+
+                    <fieldset class="pure-group">
+                        <label for="name">Name: </label>
+                        <input id="name" name="name" placeholder="Enter Your Name" />
+                    </fieldset>
+
+                    <fieldset class="pure-group">
+                        <label for="email">Your Email Address:</label>
+                        <input id="email" name="email" type="email" value="" required placeholder="Your Email"/>
+                        <span class="email-invalid" style="display:none">Must be a valid email address</span>
+                    </fieldset>
+
+                    <fieldset class="pure-group">
+                        <label for="message">Message: </label>
+                        <textarea id="message" name="message" rows="10" placeholder="Enter Message"></textarea>
+                    </fieldset>
+
+
+
+                    <button>Send</button>
+
+                </div>
+
+                <div class="contactme">
+                    <div class="home-phone">
+                        <p>+1 206 799 0080</p>
+                    </div>
+                    <div class="home-email">
+                        <p>krychevskyidenys@gmail.com</p>
+                    </div>
+                </div>
+
+
+                <!-- Customise the Thankyou Message People See when they submit the form: -->
+                <div class="thankyou_message" style="display:none;">
+                    <p>Thanks for contacting me!</p>
+                    <p>I will get back to you soon!</p>
+                    <a href="{{ url_for('home') }}"><div class="clickme">Go Back</div></a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{%endblock%}
